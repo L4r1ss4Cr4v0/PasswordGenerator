@@ -29,11 +29,11 @@ if (isset($_POST["size"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="scr/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=content_copy" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Password Generator</title>
 </head>
 <body class="flex">
@@ -48,10 +48,18 @@ if (isset($_POST["size"])) {
     }
 
     copyButton.addEventListener("click", copy);
+
 </script>
-    <h1>Password Generator</h1>
+    <div class="flex">
+        <span class="material-symbols-outlined">lock</span>
+        <h1>Password Generator</h1>
+    </div>
+
     <form method="post" class="flex">
-        <input type="number" name="size" min="4" max="30" placeholder="Password Length" required>
+        <div id="input-div" class="flex">
+            <span class="material-symbols-outlined">key</span>
+            <input type="number" name="size" min="4" max="30" placeholder="Password Length" required>
+        </div>
         <button type="submit">Gerar senha</button>
     </form>
         <?php 

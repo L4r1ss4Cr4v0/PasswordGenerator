@@ -1,19 +1,28 @@
 * {
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
   color: #fff;
   box-sizing: border-box;
+  font-size: 1.28em;
+}
+
+h1 {
+  margin: 0;
+}
+
+span {
+  font-size: 2.2em !important;
+  color: #d6b035;
 }
 
 body {
-  background-color: #000;
+  background-color: #212124;
   text-align: center;
   height: 90vh;
-  gap: 20px;
 }
 
-body,
-form,
-div {
+.flex {
   justify-content: center;
   display: flex;
   align-items: center;
@@ -24,52 +33,64 @@ form {
   flex-direction: column;
 }
 
-form {
-  gap: 20px;
+body,
+form,
+div {
+  row-gap: 50px;
+  column-gap: 20px;
+}
+
+#input-div {
+  border: 1px solid #fff;
+  padding: 5px 0 0 20px;
+  border-radius: 5px;
+}
+
+#input-div span {
+  color: #fff;
+  font-size: 0.9em !important;
+  text-align: start;
 }
 
 input {
   background: none;
   border: none;
-  border-bottom: 3px solid #fff;
-  text-align: center;
-  font-size: 2em;
-  padding: 10px;
-  width: 20vw;
   outline: none;
+  width: 25vw;
+  height: 8vh;
+  font-size: 0.5em;
 }
 
 input::placeholder {
-  font-size: 0.7em;
+  color: #fff;
+  font-size: 1.2em;
 }
 
 button {
-  background-color: #bf3ac4;
-  padding: 12px 30px;
-  border-radius: 30px;
+  background-color: #fff;
+  color: #b89523;
+  border-radius: 10px;
+  width: 25vw;
+  padding: 25px;
+  font-size: 0.8em;
   border: none;
-  font-size: 1em;
+  font-weight: 600;
 }
 
 button:hover {
   cursor: pointer;
   transition: 0.3s;
-  background-color: #c170c4;
+  color: #fff;
+  background-color: #b89523;
 }
 
 p {
   font-size: 3em;
   letter-spacing: 15px;
+  margin: 0;
 }
 
-div {
-  gap: 30px;
-  padding: 0 20px;
-  height: 20vh;
-  border-radius: 20px;
-}
-
-div button {
+#copyButton {
   width: 8vh;
   height: 8vh;
   padding: 0;
@@ -77,12 +98,16 @@ div button {
   display: none;
 }
 
-div:hover {
+#outside-div {
+  row-gap: 10px;
+}
+
+#outside-div:hover {
   border: 3px solid #919191;
   transition: 0.3s;
 }
 
-div:hover button {
+div:hover #copyButton {
   display: block;
 }
 
@@ -90,40 +115,12 @@ div:hover p {
   cursor: pointer;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+#msg {
+  display: var(--copied);
+  color: #919191;
+  border: 1px solid #bf3ac4;
+  border-radius: 60px;
+  padding: 5px 15px;
+  font-size: 1.7em;
+  letter-spacing: 5px;
 }
